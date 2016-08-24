@@ -1,0 +1,8 @@
+<h2>Goods for Sale</h2>
+<ul>
+  {{#each model as |item|}}
+    <li>
+      {{#link-to 'item-detail' item.item_id}}{{/link-to}}
+    </li>
+    {{/each}}
+</ul>

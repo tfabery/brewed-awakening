@@ -1,0 +1,16 @@
+{
+  "items": [{
+      "category": "0",
+      "name": "sumatra",
+      "imageUrl": "https://gj-aus-prod.s3.amazonaws.com/production/spark/product_pictures/2/large/Coffee_-_Origins_-_Sumatra_Dark.jpg?1357747221",
+      "description": "Bold, earthy, strong",
+      "price": "60"
+    }],
+
+  "categories": [{
+      "name": "beans"
+    },
+    {
+      "name": "grinder"
+    }]
+}

@@ -1,0 +1,9 @@
+{{#each model.items as |item|}}
+  <p>
+    {{item.name}}
+  </p>
+  {{item-update item=item update='update' destroyItem="destroyItem"}}
+{{/each}}
+<hr>
+<h3>New Item</h3>
+{{new-item categories=model.categories saveItemToFirebase="saveItemToFirebase"}}
