@@ -26,6 +26,11 @@ export default Ember.Route.extend({
     destroyItem(item) {
       item.destroyRecord();
       this.transitionTo('admin');
+    },
+    saveCategoryToFirebase(params) {
+      var newCategory = this.store.createRecord('category', params);
+      newCategory.save();
+      this.transitionTo('admin');
     }
   }
 });
