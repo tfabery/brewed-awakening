@@ -9,9 +9,21 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    saveItemToFirebase(params) {
-      var newItem = this.store.createRecord('item', params);
-      newItem.save();
+    saveItemToFirebase(params, categoryId) {
+      var category = this.store.findRecord('category', categoryId).then(function(response) {
+        var itemParams = {
+          category: response,
+          name: params.name,
+          imageUrl: params.imageUrl,
+          description: params.description,
+          price: params.price,
+        }
+        var newItem = this.store.createRecord('item', itemParams);
+        response.get('items').addObject(newItem);
+        newItem.save().then(function() {
+          return category.save();
+        });
+      });
       this.transitionTo('admin');
     },
     update(item, params) {
